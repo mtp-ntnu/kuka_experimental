@@ -48,13 +48,17 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 
-
 // ros_control
 #include <realtime_tools/realtime_publisher.h>
 #include <controller_manager/controller_manager.h>
 #include <hardware_interface/joint_command_interface.h>
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/robot_hw.h>
+
+#include <joint_limits_interface/joint_limits.h>
+#include <joint_limits_interface/joint_limits_urdf.h>
+#include <joint_limits_interface/joint_limits_rosparam.h>
+#include <joint_limits_interface/joint_limits_interface.h>
 
 // Timers
 #include <chrono>
@@ -76,7 +80,6 @@ class KukaHardwareInterface : public hardware_interface::RobotHW
 {
 
 private:
-
   // ROS node handle
   ros::NodeHandle nh_;
 
@@ -98,7 +101,7 @@ private:
   std::vector<double> rsi_joint_position_corrections_;
   unsigned long long ipoc_;
 
-  std::unique_ptr<realtime_tools::RealtimePublisher<std_msgs::String> > rt_rsi_pub_;
+  std::unique_ptr<realtime_tools::RealtimePublisher<std_msgs::String>> rt_rsi_pub_;
 
   std::unique_ptr<UDPServer> server_;
   std::string local_host_;
@@ -116,9 +119,9 @@ private:
   // Interfaces
   hardware_interface::JointStateInterface joint_state_interface_;
   hardware_interface::PositionJointInterface position_joint_interface_;
+  joint_limits_interface::PositionJointSaturationInterface position_joint_limit_saturation_interface_;
 
 public:
-
   KukaHardwareInterface();
   ~KukaHardwareInterface();
 
@@ -126,7 +129,6 @@ public:
   void configure();
   bool read(const ros::Time time, const ros::Duration period);
   bool write(const ros::Time time, const ros::Duration period);
-
 };
 
 } // namespace kuka_rsi_hw_interface
