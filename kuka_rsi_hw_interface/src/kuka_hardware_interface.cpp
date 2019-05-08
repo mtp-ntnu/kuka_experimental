@@ -51,6 +51,7 @@ KukaHardwareInterface::KukaHardwareInterface()
   , joint_velocity_command_(6, 0.0)
   , joint_effort_command_(6, 0.0)
   , joint_names_(6)
+  , last_joint_position_(6, 0.0)
   , rsi_initial_joint_positions_(6, 0.0)
   , rsi_joint_position_corrections_(6, 0.0)
   , ipoc_(0)
@@ -69,6 +70,11 @@ KukaHardwareInterface::KukaHardwareInterface()
                              "'controller_joint_names' on the parameter server.");
   }
 
+  // RML
+  rml_.reset(new ReflexxesAPI(n_dof_, 0.004));
+  rml_input_.reset(new RMLPositionInputParameters(n_dof_));
+  rml_output_.reset(new RMLPositionOutputParameters(n_dof_));
+
   // Create ros_control interfaces
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
@@ -77,8 +83,8 @@ KukaHardwareInterface::KukaHardwareInterface()
                                                                                &joint_velocity_[i], &joint_effort_[i]));
 
     // Create joint position control interface
-    position_joint_interface_.registerHandle(hardware_interface::JointHandle(
-        joint_state_interface_.getHandle(joint_names_[i]), &joint_position_command_[i]));
+    posvel_joint_interface_.registerHandle(hardware_interface::PosVelJointHandle(
+        joint_state_interface_.getHandle(joint_names_[i]), &joint_position_command_[i], &joint_velocity_command_[i]));
 
     joint_limits_interface::JointLimits joint_limits;
     const bool rosparam_limits_ok = joint_limits_interface::getJointLimits(joint_names_[i], nh_, joint_limits);
@@ -87,13 +93,22 @@ KukaHardwareInterface::KukaHardwareInterface()
       ROS_ERROR("Cannot find required parameter 'joint_limits' on the parameter server.");
       throw std::runtime_error("Cannot find required parameter 'joint_limits' on the parameter server.");
     }
-    position_joint_limit_saturation_interface_.registerHandle(joint_limits_interface::PositionJointSaturationHandle(
-        position_joint_interface_.getHandle(joint_names_[i]), joint_limits));
+    // position_joint_limit_saturation_interface_.registerHandle(joint_limits_interface::PositionJointSaturationHandle(
+    //     position_joint_interface_.getHandle(joint_names_[i]), joint_limits));
+
+    if (joint_limits.has_velocity_limits)
+    {
+      rml_input_->MaxVelocityVector->VecData[i] = joint_limits.max_velocity;
+    }
+    if (joint_limits.has_acceleration_limits)
+    {
+      rml_input_->MaxAccelerationVector->VecData[i] = joint_limits.max_acceleration;
+    }
   }
 
   // Register interfaces
   registerInterface(&joint_state_interface_);
-  registerInterface(&position_joint_interface_);
+  registerInterface(&posvel_joint_interface_);
 
   ROS_INFO_STREAM_NAMED("hardware_interface", "Loaded kuka_rsi_hardware_interface");
 }
@@ -121,8 +136,13 @@ bool KukaHardwareInterface::read(const ros::Time time, const ros::Duration perio
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
     joint_position_[i] = DEG2RAD * rsi_state_.positions[i];
+    if (!period.isZero())
+    {
+      // joint_velocity_[i] = (joint_position_[i] - last_joint_position_[i]) / period.toSec();
+    }
   }
   ipoc_ = rsi_state_.ipoc;
+  last_joint_position_ = joint_position_;
 
   return true;
 }
@@ -131,11 +151,31 @@ bool KukaHardwareInterface::write(const ros::Time time, const ros::Duration peri
 {
   out_buffer_.resize(1024);
 
-  position_joint_limit_saturation_interface_.enforceLimits(period);
+  // position_joint_limit_saturation_interface_.enforceLimits(period);
 
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
+    rml_input_->CurrentPositionVector->VecData[i] = joint_position_[i];
+    rml_input_->CurrentVelocityVector->VecData[i] = joint_velocity_[i];
+
+    rml_input_->TargetPositionVector->VecData[i] = joint_position_command_[i];
+    rml_input_->TargetVelocityVector->VecData[i] = joint_velocity_command_[i];
+  }
+  int result = rml_->RMLPosition(*rml_input_.get(), rml_output_.get(), rml_flags_);
+  if (result < 0)
+  {
+    ROS_ERROR_STREAM("rml error: " << result);
+  }
+
+  for (std::size_t i = 0; i < n_dof_; ++i)
+  {
+    joint_position_command_[i] = rml_output_->NewPositionVector->VecData[i];
+    joint_velocity_command_[i] = rml_output_->NewVelocityVector->VecData[i];
+
     rsi_joint_position_corrections_[i] = (RAD2DEG * joint_position_command_[i]) - rsi_initial_joint_positions_[i];
+
+    joint_velocity_[i] = joint_velocity_command_[i];
+    joint_effort_[i] = rml_output_->NewAccelerationVector->VecData[i];
   }
 
   out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;
@@ -164,8 +204,15 @@ void KukaHardwareInterface::start()
   {
     joint_position_[i] = DEG2RAD * rsi_state_.positions[i];
     joint_position_command_[i] = joint_position_[i];
+    last_joint_position_[i] = joint_position_[i];
     rsi_initial_joint_positions_[i] = rsi_state_.initial_positions[i];
+
+    rml_input_->CurrentPositionVector->VecData[i] = joint_position_[i];
+    rml_input_->CurrentVelocityVector->VecData[i] = 0.0;
+    rml_input_->CurrentAccelerationVector->VecData[i] = 0.0;
+    rml_input_->SelectionVector->VecData[i] = true;
   }
+
   ipoc_ = rsi_state_.ipoc;
   out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;
   server_->send(out_buffer_);

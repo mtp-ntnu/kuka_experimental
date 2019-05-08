@@ -32,12 +32,15 @@ catkin_package(
     TinyXML
 )
 
+add_subdirectory(external/ReflexxesTypeII)
+
 
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
   ${TinyXML_INCLUDE_DIRS}
+  external/ReflexxesTypeII/include
 )
 
 add_library(kuka_hardware_interface
@@ -48,6 +51,7 @@ target_link_libraries(kuka_hardware_interface
   ${catkin_LIBRARIES}
   ${Boost_LIBRARIES}
   ${TinyXML_LIBRARIES}
+  RMLTypeII
 )
 
 add_executable(kuka_hardware_interface_node

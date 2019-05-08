@@ -52,8 +52,14 @@
 #include <realtime_tools/realtime_publisher.h>
 #include <controller_manager/controller_manager.h>
 #include <hardware_interface/joint_command_interface.h>
+#include <hardware_interface/posvel_command_interface.h>
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/robot_hw.h>
+
+#include <ReflexxesAPI.h>
+#include <RMLPositionFlags.h>
+#include <RMLPositionInputParameters.h>
+#include <RMLPositionOutputParameters.h>
 
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
@@ -72,13 +78,11 @@
 
 namespace kuka_rsi_hw_interface
 {
-
 static const double RAD2DEG = 57.295779513082323;
 static const double DEG2RAD = 0.017453292519943295;
 
 class KukaHardwareInterface : public hardware_interface::RobotHW
 {
-
 private:
   // ROS node handle
   ros::NodeHandle nh_;
@@ -94,12 +98,20 @@ private:
   std::vector<double> joint_velocity_command_;
   std::vector<double> joint_effort_command_;
 
+  std::vector<double> last_joint_position_;
+
   // RSI
   RSIState rsi_state_;
   RSICommand rsi_command_;
   std::vector<double> rsi_initial_joint_positions_;
   std::vector<double> rsi_joint_position_corrections_;
   unsigned long long ipoc_;
+
+  // RML
+  std::unique_ptr<ReflexxesAPI> rml_;
+  std::unique_ptr<RMLPositionInputParameters> rml_input_;
+  std::unique_ptr<RMLPositionOutputParameters> rml_output_;
+  RMLPositionFlags rml_flags_;
 
   std::unique_ptr<realtime_tools::RealtimePublisher<std_msgs::String>> rt_rsi_pub_;
 
@@ -118,7 +130,7 @@ private:
 
   // Interfaces
   hardware_interface::JointStateInterface joint_state_interface_;
-  hardware_interface::PositionJointInterface position_joint_interface_;
+  hardware_interface::PosVelJointInterface posvel_joint_interface_;
   joint_limits_interface::PositionJointSaturationInterface position_joint_limit_saturation_interface_;
 
 public:
@@ -131,6 +143,6 @@ public:
   bool write(const ros::Time time, const ros::Duration period);
 };
 
-} // namespace kuka_rsi_hw_interface
+}  // namespace kuka_rsi_hw_interface
 
 #endif
