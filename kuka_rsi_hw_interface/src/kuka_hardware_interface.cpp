@@ -77,8 +77,8 @@ KukaHardwareInterface::KukaHardwareInterface()
                                                                                &joint_velocity_[i], &joint_effort_[i]));
 
     // Create joint position control interface
-    position_joint_interface_.registerHandle(hardware_interface::JointHandle(
-        joint_state_interface_.getHandle(joint_names_[i]), &joint_position_command_[i]));
+    velocity_joint_interface_.registerHandle(hardware_interface::JointHandle(
+        joint_state_interface_.getHandle(joint_names_[i]), &joint_velocity_command_[i]));
 
     joint_limits_interface::JointLimits joint_limits;
     const bool rosparam_limits_ok = joint_limits_interface::getJointLimits(joint_names_[i], nh_, joint_limits);
@@ -87,13 +87,13 @@ KukaHardwareInterface::KukaHardwareInterface()
       ROS_ERROR("Cannot find required parameter 'joint_limits' on the parameter server.");
       throw std::runtime_error("Cannot find required parameter 'joint_limits' on the parameter server.");
     }
-    position_joint_limit_saturation_interface_.registerHandle(joint_limits_interface::PositionJointSaturationHandle(
-        position_joint_interface_.getHandle(joint_names_[i]), joint_limits));
+    velocity_joint_limit_saturation_interface_.registerHandle(joint_limits_interface::VelocityJointSaturationHandle(
+        velocity_joint_interface_.getHandle(joint_names_[i]), joint_limits));
   }
 
   // Register interfaces
   registerInterface(&joint_state_interface_);
-  registerInterface(&position_joint_interface_);
+  registerInterface(&velocity_joint_interface_);
 
   ROS_INFO_STREAM_NAMED("hardware_interface", "Loaded kuka_rsi_hardware_interface");
 }
@@ -131,11 +131,11 @@ bool KukaHardwareInterface::write(const ros::Time time, const ros::Duration peri
 {
   out_buffer_.resize(1024);
 
-  position_joint_limit_saturation_interface_.enforceLimits(period);
+  velocity_joint_limit_saturation_interface_.enforceLimits(period);
 
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
-    rsi_joint_position_corrections_[i] = (RAD2DEG * joint_position_command_[i]) - rsi_initial_joint_positions_[i];
+    rsi_joint_position_corrections_[i] = (RAD2DEG * joint_position_[i] + joint_velocity_command_[i] * period.toSec()) - rsi_initial_joint_positions_[i];
   }
 
   out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;
@@ -163,7 +163,6 @@ void KukaHardwareInterface::start()
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
     joint_position_[i] = DEG2RAD * rsi_state_.positions[i];
-    joint_position_command_[i] = joint_position_[i];
     rsi_initial_joint_positions_[i] = rsi_state_.initial_positions[i];
   }
   ipoc_ = rsi_state_.ipoc;
