@@ -1,6 +1,6 @@
 <ROOT>
    <CONFIG>
-      <IP_NUMBER>ip.address.of.rospc</IP_NUMBER>   <!-- IP-number of the external socket -->
+      <IP_NUMBER>192.168.1.67</IP_NUMBER>   <!-- IP-number of the external socket -->
       <PORT>49152</PORT>                   <!-- Port-number of the external socket -->      
       <SENTYPE>ImFree</SENTYPE>        <!-- The name of your system send in <Sen Type="" > -->     
       <ONLYSEND>FALSE</ONLYSEND>       <!-- TRUE means the client don't expect answers. Do not send anything to robot -->
@@ -19,6 +19,18 @@
          <ELEMENT TAG="DEF_AIPos" TYPE="DOUBLE" INDX="INTERNAL" />
          <ELEMENT TAG="DEF_ASPos" TYPE="DOUBLE" INDX="INTERNAL" />
          <ELEMENT TAG="DEF_Delay" TYPE="LONG" INDX="INTERNAL" />
+         <ELEMENT TAG="Vel.A1" TYPE="DOUBLE" INDX="1" />
+         <ELEMENT TAG="Vel.A2" TYPE="DOUBLE" INDX="2" />
+         <ELEMENT TAG="Vel.A3" TYPE="DOUBLE" INDX="3" />
+         <ELEMENT TAG="Vel.A4" TYPE="DOUBLE" INDX="4" />
+         <ELEMENT TAG="Vel.A5" TYPE="DOUBLE" INDX="5" />
+         <ELEMENT TAG="Vel.A6" TYPE="DOUBLE" INDX="6" />
+         <ELEMENT TAG="Eff.A1" TYPE="DOUBLE" INDX="7" />
+         <ELEMENT TAG="Eff.A2" TYPE="DOUBLE" INDX="8" />
+         <ELEMENT TAG="Eff.A3" TYPE="DOUBLE" INDX="9" />
+         <ELEMENT TAG="Eff.A4" TYPE="DOUBLE" INDX="10" />
+         <ELEMENT TAG="Eff.A5" TYPE="DOUBLE" INDX="11" />
+         <ELEMENT TAG="Eff.A6" TYPE="DOUBLE" INDX="12" />
       </ELEMENTS>
    </SEND>
    <RECEIVE>

@@ -106,7 +106,7 @@ bool KukaHardwareInterface::read(const ros::Time time, const ros::Duration perio
   rsi_state_ = RSIState(in_buffer_);
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
-    joint_position_[i] = DEG2RAD * rsi_state_.positions[i];
+    joint_position_[i] = DEG2RAD * rsi_state_.position[i];
   }
   ipoc_ = rsi_state_.ipoc;
 
@@ -146,9 +146,9 @@ void KukaHardwareInterface::start()
   rsi_state_ = RSIState(in_buffer_);
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
-    joint_position_[i] = DEG2RAD * rsi_state_.positions[i];
+    joint_position_[i] = DEG2RAD * rsi_state_.position[i];
     joint_position_command_[i] = joint_position_[i];
-    rsi_initial_joint_positions_[i] = rsi_state_.initial_positions[i];
+    rsi_initial_joint_positions_[i] = rsi_state_.initial_position[i];
   }
   ipoc_ = rsi_state_.ipoc;
   out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;

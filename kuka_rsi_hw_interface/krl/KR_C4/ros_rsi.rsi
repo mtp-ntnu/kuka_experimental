@@ -60,7 +60,67 @@
     </rSIElement>
     <rSIElement name="ETHERNET1" objType="ETHERNET" objTypeID="64" maxInputs="64" maxOutputs="64">
       <rSIInPorts>
-        <rSIInPort name="In1" mandatory="false" />
+        <rSIInPort name="In1" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D1/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In2" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D2/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In3" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D3/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In4" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D4/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In5" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D5/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In6" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//D6/Out1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In7" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A1" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In8" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A2" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In9" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A3" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In10" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A4" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In11" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A5" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In12" mandatory="false">
+          <source>
+            <rSIOutPortMoniker name="//GEARTORQUE1/A6" />
+          </source>
+        </rSIInPort>
+        <rSIInPort name="In13" mandatory="false" />
       </rSIInPorts>
       <rSIOutPorts>
         <rSIOutPort name="Out1" />
@@ -106,6 +166,122 @@
         <rSIParameter name="MaxE4" value="6.0" paramType="System.Double" minVal="0" maxVal="2147483647" isEnum="false" index="10" />
         <rSIParameter name="MaxE5" value="6.0" paramType="System.Double" minVal="0" maxVal="2147483647" isEnum="false" index="11" />
         <rSIParameter name="MaxE6" value="6.0" paramType="System.Double" minVal="0" maxVal="2147483647" isEnum="false" index="12" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="AXISACT1" objType="AXISACT" objTypeID="32" maxInputs="0" maxOutputs="0">
+      <rSIOutPorts>
+        <rSIOutPort name="A1" />
+        <rSIOutPort name="A2" />
+        <rSIOutPort name="A3" />
+        <rSIOutPort name="A4" />
+        <rSIOutPort name="A5" />
+        <rSIOutPort name="A6" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="Type" value="Measured" paramType="KUKA.RSIVisual.RSI_PosType" minVal="-2147483648" maxVal="2147483647" isEnum="true" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D1" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A1" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D2" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A2" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D3" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A3" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D4" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A4" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D5" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A5" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="D6" objType="D" objTypeID="67" maxInputs="0" maxOutputs="0">
+      <rSIInPorts>
+        <rSIInPort name="In1">
+          <source>
+            <rSIOutPortMoniker name="//AXISACT1/A6" />
+          </source>
+        </rSIInPort>
+      </rSIInPorts>
+      <rSIOutPorts>
+        <rSIOutPort name="Out1" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="KD" value="1" paramType="System.Double" minVal="-2147483648" maxVal="2147483647" isEnum="false" index="1" />
+      </rSIParameters>
+    </rSIElement>
+    <rSIElement name="GEARTORQUE1" objType="GEARTORQUE" objTypeID="46" maxInputs="0" maxOutputs="0">
+      <rSIOutPorts>
+        <rSIOutPort name="A1" />
+        <rSIOutPort name="A2" />
+        <rSIOutPort name="A3" />
+        <rSIOutPort name="A4" />
+        <rSIOutPort name="A5" />
+        <rSIOutPort name="A6" />
+      </rSIOutPorts>
+      <rSIParameters>
+        <rSIParameter name="Type" value="Set_LoadSide" paramType="KUKA.RSIVisual.RSI_GearTorqueType" minVal="-2147483648" maxVal="2147483647" isEnum="true" index="1" />
       </rSIParameters>
     </rSIElement>
   </rSIObjects>
