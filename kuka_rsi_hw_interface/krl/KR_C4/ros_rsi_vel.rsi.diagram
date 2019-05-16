@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rSIObjectDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 21.25, 14.75" name="rsi_axis_corr">
+  <rSIModelMoniker name="/" />
+  <nestedChildShapes>
+    <rSIElementShape Id="b2d9a2e7-ac0e-45db-932a-f7115bae64c0" absoluteBounds="19, 3.125, 1.5, 3.1670068359374994" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//AXISCORR1" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="f2b59bf1-531b-44c5-a47a-f7d194e63c71" absoluteBounds="18.599999994039536, 3.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="a1b92ae8-ac01-43de-8aa1-2723ebe1201d" absoluteBounds="18.599999994039536, 3.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA2" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="70df0e57-d834-429c-b2b8-3d07c0daf2aa" absoluteBounds="18.599999994039536, 4.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA3" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="c587778f-7d8f-4e18-91bc-66cdaa987bba" absoluteBounds="18.599999994039536, 4.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA4" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="2c8328be-e3db-4d34-9730-f95c190abb01" absoluteBounds="18.599999994039536, 4.975, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA5" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="1832fdf8-b656-490b-b82d-986bee4e2860" absoluteBounds="18.599999994039536, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//AXISCORR1/CorrA6" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="9af26875-ad2a-4761-8dce-2efce053fe63" absoluteBounds="20.5, 3.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/Stat" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="4b23aece-9f4f-4a3b-baf5-a19e9c27fd1b" absoluteBounds="20.5, 3.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="5ce0386f-d481-4221-95c0-5c333d528109" absoluteBounds="20.5, 4.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="2ca5ce5a-4390-4093-99bd-624564a65929" absoluteBounds="20.5, 4.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="e7b7e903-a7e9-455f-bbc7-21885d7d3d7d" absoluteBounds="20.5, 4.975, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="7a504f41-0188-4351-99d7-48255eaf6a0b" absoluteBounds="20.5, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="7fd76d74-da37-4899-b72b-efdf0d0f0d54" absoluteBounds="20.5, 5.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORR1/A6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="d6fe22f5-1a0b-405a-be57-28e980716a7f" absoluteBounds="19.015, 3.635, 1.4700000000000002, 2.5570068359375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="878829fa-2780-4bf2-a646-b9b8c83f8e43" absoluteBounds="13, 3.125, 1.5, 7.6750000029802319" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//ETHERNET1" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="abdd0bd3-4335-4e64-8eff-da73d407a69c" absoluteBounds="12.599999994039536, 3.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="de403588-cb6b-4632-8374-a31518ccccbd" absoluteBounds="14.5, 3.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="3efc067d-808d-4af0-9d26-db0bdd796200" absoluteBounds="14.5, 3.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="4e25c1ff-acf7-44fb-8f03-414b64ad9218" absoluteBounds="14.5, 4.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="4477ff66-a90f-4577-b0c8-2f6c2ff082c1" absoluteBounds="14.5, 4.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="c0662312-6615-4fba-80e8-959cadf3ba0f" absoluteBounds="14.5, 4.975, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="05025b87-624a-49fd-89fd-00e7a57f8539" absoluteBounds="14.5, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="af103059-b638-4b0e-9077-cb1616dea134" absoluteBounds="14.5, 5.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//ETHERNET1/Out7" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIInPortShape Id="b8c556e4-4c3c-4a33-a3c8-95bc1e5f145e" absoluteBounds="12.599999994039536, 3.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In2" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="bd0e622b-31c6-4d18-94b5-1d7a8f16ea14" absoluteBounds="12.599999994039536, 4.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In3" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="24df48ca-6754-4eaa-9173-fb0e3da1f1b8" absoluteBounds="12.599999994039536, 4.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In4" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="fef42005-42d7-4662-bdb2-663fa08df598" absoluteBounds="12.599999994039536, 4.975, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In5" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="f748cb43-ede5-402f-89c0-6d97b4b57e0b" absoluteBounds="12.599999994039536, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In6" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="a1b81e0b-443a-4e77-9750-32a4a6c067ad" absoluteBounds="12.599999994039536, 5.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In7" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="0ead782e-bd68-4bed-b0ae-75a8301cfcd5" absoluteBounds="12.599999994039536, 6.1750000000000007, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In8" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="c9b789bd-7955-459a-a0f0-48475d93d13a" absoluteBounds="12.599999994039536, 6.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In9" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="0ef9feb8-f66b-46dc-b393-46e402581195" absoluteBounds="12.599999994039536, 6.975, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In10" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="33cadcf9-5532-4731-958e-780ee9089453" absoluteBounds="12.599999994039536, 7.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In11" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="a2a4a82e-48d6-476f-b378-06964d171436" absoluteBounds="12.599999994039536, 7.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In12" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="408738d2-4a96-45fa-afa6-e136928c7d4a" absoluteBounds="12.599999994039536, 8.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In13" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="da0481a6-7e50-4ba1-878c-067ce2eb2b4b" absoluteBounds="12.599999994039536, 8.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In14" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="1b49e7a4-2422-4376-8fb6-f93fc1b13195" absoluteBounds="12.599999994039536, 8.9750000000000014, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In15" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="81d2497d-8b69-4a7c-baba-ab19c995e205" absoluteBounds="12.599999994039536, 9.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In16" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="a0700e34-d6ce-41b8-b310-e1d1de7db112" absoluteBounds="12.599999994039536, 9.775, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In17" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="5f07944b-9ff7-4bb9-a047-b61437570aaf" absoluteBounds="12.599999994039536, 10.175, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In18" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIInPortShape Id="df47c6f6-8ad5-40e0-9bce-4420eaa259d7" absoluteBounds="12.599999994039536, 10.575, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIInPortMoniker name="//ETHERNET1/In19" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="cddc66e2-5076-4e31-af9a-6e35a15d3067" absoluteBounds="13.015, 3.635, 1.4700000000000002, 1.0185953776041665" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="9eb39b8d-27e9-4f39-a536-e57577e37d39" absoluteBounds="19.125, 7.375, 1.5, 4.8750000029802329" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//AXISCORRMON1" />
+      <relativeChildShapes>
+        <rSIOutPortShape Id="26943528-4375-47f1-951a-20726d0fee28" absoluteBounds="20.625, 7.625, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="76f5b08f-533e-40a9-95c5-f22f78999980" absoluteBounds="20.625, 8.025, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="a53f6c8a-2b32-4ae9-875c-24490daca2ed" absoluteBounds="20.625, 8.425, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="96cfed01-2117-4472-97db-0fe25e892a5e" absoluteBounds="20.625, 8.825, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="642ef027-b273-4ae0-ad39-0fdc57ff953c" absoluteBounds="20.625, 9.225, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="f6eb961b-6c07-44b5-bc5e-3f09d1fbe5f0" absoluteBounds="20.625, 9.625, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/A6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="31e5276b-795f-4c44-93a3-161ea68c5112" absoluteBounds="20.625, 10.025, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="3b81f171-6b0a-4ede-85d5-8aed8cfaf9a3" absoluteBounds="20.625, 10.425, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="497099ea-5c7a-49e9-994d-8e4c28da7776" absoluteBounds="20.625, 10.825, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="9258426c-a097-4619-9823-5035da85ccd5" absoluteBounds="20.625, 11.225, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="f483c551-8a7a-42b4-ae74-b8af21724205" absoluteBounds="20.625, 11.625, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="26be6624-3307-49c5-b010-1141945ecb04" absoluteBounds="20.625, 12.025, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISCORRMON1/E6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="d77bc4fb-edd3-41cc-a262-edac1a57f425" absoluteBounds="19.14, 7.885, 1.4700000000000002, 2.5570068359375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="064c1c8f-35d6-4127-9c70-eed82bfa02ac" absoluteBounds="0.625, 0.5, 1.5, 2.4750000029802322" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//AXISACT1" />
+      <relativeChildShapes>
+        <rSIOutPortShape Id="9762fa44-ebfa-4ba0-aa81-f173c938ff8d" absoluteBounds="2.125, 0.75, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="3d3be0c2-0a8a-4e7d-bb79-6158d0e0260c" absoluteBounds="2.125, 1.15, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="b2f38d8f-707b-432f-b66f-319c650b0e28" absoluteBounds="2.125, 1.55, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="28bc309e-2711-4119-8379-ee04fff33e81" absoluteBounds="2.125, 1.9500000000000002, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="5a18c5ad-7259-413f-8fac-e11276b84a13" absoluteBounds="2.125, 2.35, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="89172e99-959e-4ea6-a015-6b2dd22b49c4" absoluteBounds="2.125, 2.75, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//AXISACT1/A6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="65fec5a2-d2d8-4df4-8650-7897f0bbc9eb" absoluteBounds="0.63999999999999968, 1.0099999999999998, 1.4700000000000002, 0.44169108072916663" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="ee234cdd-83d2-4e0b-b4e3-9e4f417de752" absoluteBounds="4.875, 3.875, 1.5, 0.85938964843749943" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D1" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="5face93a-9bdb-4194-9dc6-4abdcf5d5ea1" absoluteBounds="4.4749999940395355, 4.125, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D1/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="5133aedb-1dd2-4933-84e4-7a66fbaf3b12" absoluteBounds="6.375, 4.125, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D1/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="36f723ac-7493-46ba-af9f-ae4fa7318ad4" isExpanded="false" absoluteBounds="4.89, 4.385, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 4.16250000149012); (4.09999999403954 : 4.16250000149012); (4.09999999403954 : 0.787500001490116); (2.52500000596046 : 0.787500001490116)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="5face93a-9bdb-4194-9dc6-4abdcf5d5ea1" />
+        <rSIOutPortShapeMoniker Id="9762fa44-ebfa-4ba0-aa81-f173c938ff8d" />
+      </nodes>
+    </rSISignalConnector>
+    <rSIElementShape Id="b1f81433-5877-4deb-864d-13af12ce9772" absoluteBounds="4.875, 5.125, 1.5, 0.85938964843749943" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D2" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="cc9e9543-cede-432c-850e-007096f6246d" absoluteBounds="4.4749999940395355, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D2/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="6556575c-086e-4ed8-a060-51c439f93715" absoluteBounds="6.375, 5.375, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D2/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="20932fa1-f963-4ce1-822a-4a5e68254c8d" isExpanded="false" absoluteBounds="4.89, 5.635, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 5.41250000149012); (3.97499999403954 : 5.41250000149012); (3.97499999403954 : 1.18750000149012); (2.52500000596046 : 1.18750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="cc9e9543-cede-432c-850e-007096f6246d" />
+        <rSIOutPortShapeMoniker Id="3d3be0c2-0a8a-4e7d-bb79-6158d0e0260c" />
+      </nodes>
+    </rSISignalConnector>
+    <rSIElementShape Id="a253d45e-db29-46ca-94ff-ed7bd9563bec" absoluteBounds="4.875, 6.375, 1.5, 0.85938964843749988" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D3" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="744022c9-6f6f-486c-9e3c-99f03e9caaa2" absoluteBounds="4.4749999940395355, 6.625, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D3/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="2abde171-1c9d-483f-8953-2cd300244810" absoluteBounds="6.375, 6.625, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D3/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="9388aca8-28ee-4140-bbe2-873a0d8c9c36" isExpanded="false" absoluteBounds="4.8900000000000006, 6.885, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="4b7b3abb-cccc-486f-b1d6-8124a61e801b" absoluteBounds="4.875, 7.5, 1.5, 0.85938964843749943" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D4" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="8f66baf9-e368-43d0-b524-0c78df860e82" absoluteBounds="4.4749999940395355, 7.75, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D4/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="c5441ce4-21b7-4f8b-8846-3f4a08e04fdd" absoluteBounds="6.375, 7.75, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D4/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="33afa0ea-8ac4-47eb-b605-b5e720777246" isExpanded="false" absoluteBounds="4.89, 8.01, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="d9695c8e-9917-4c49-bfb7-4684fd1680fe" absoluteBounds="4.875, 8.625, 1.5, 0.85938964843749943" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D5" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="5ad13e20-3206-4e9d-b483-adbf8702a616" absoluteBounds="4.4749999940395355, 8.875, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D5/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="328d12ea-7cbd-48bb-b346-56baafb22d66" absoluteBounds="6.375, 8.875, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D5/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="2e77e04f-0c67-4561-8ca6-57f3c236af37" isExpanded="false" absoluteBounds="4.8900000000000006, 9.135, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSIElementShape Id="72755256-17bc-45a2-a1cf-98fccbbf225c" absoluteBounds="4.875, 9.75, 1.5, 0.85938964843749943" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//D6" />
+      <relativeChildShapes>
+        <rSIInPortShape Id="2356e176-bc82-4ca5-a2de-55654def75f6" absoluteBounds="4.4749999940395355, 10, 0.40000000596046448, 0.075000002980232239" fillColor="BlanchedAlmond">
+          <rSIInPortMoniker name="//D6/In1" />
+          <relativeChildShapes />
+        </rSIInPortShape>
+        <rSIOutPortShape Id="7e68da0a-fa60-4836-a477-bcebb067f946" absoluteBounds="6.375, 10, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//D6/Out1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="c55d6ad9-335e-48bc-af9d-79dc862b9d84" isExpanded="false" absoluteBounds="4.8900000000000006, 10.26, 1.4700000000000002, 0.2493896484375" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 6.66250000149012); (4.12083332737287 : 6.66250000149012 : JumpStart); (3.95416666070621 : 6.66250000149012 : JumpEnd); (3.84999999403954 : 6.66250000149012); (3.84999999403954 : 1.58750000149012); (2.52500000596046 : 1.58750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="744022c9-6f6f-486c-9e3c-99f03e9caaa2" />
+        <rSIOutPortShapeMoniker Id="b2f38d8f-707b-432f-b66f-319c650b0e28" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 7.78750000149012); (4.12083332737287 : 7.78750000149012 : JumpStart); (3.82916666070621 : 7.78750000149012 : JumpEnd); (3.72499999403954 : 7.78750000149012); (3.72499999403954 : 1.98750000149012); (2.52500000596046 : 1.98750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="8f66baf9-e368-43d0-b524-0c78df860e82" />
+        <rSIOutPortShapeMoniker Id="28bc309e-2711-4119-8379-ee04fff33e81" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 8.91250000149012); (4.03749999403954 : 8.91250000149012); (4.03749999403954 : 2.38750000149012); (3.93333332737287 : 2.38750000149012 : JumpStart); (3.64166666070621 : 2.38750000149012 : JumpEnd); (2.52500000596046 : 2.38750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="5ad13e20-3206-4e9d-b483-adbf8702a616" />
+        <rSIOutPortShapeMoniker Id="5a18c5ad-7259-413f-8fac-e11276b84a13" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(4.47499999403954 : 10.0375000014901); (3.91249999403954 : 10.0375000014901); (3.91249999403954 : 2.78750000149012); (3.80833332737287 : 2.78750000149012 : JumpStart); (3.64166666070621 : 2.78750000149012 : JumpEnd); (2.52500000596046 : 2.78750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="2356e176-bc82-4ca5-a2de-55654def75f6" />
+        <rSIOutPortShapeMoniker Id="89172e99-959e-4ea6-a015-6b2dd22b49c4" />
+      </nodes>
+    </rSISignalConnector>
+    <rSIElementShape Id="f66d9129-64a7-450a-9c89-d04c1989a391" absoluteBounds="3.625, 12, 1.5, 2.4750000029802322" fillColor="BlanchedAlmond">
+      <rSIElementMoniker name="//GEARTORQUE1" />
+      <relativeChildShapes>
+        <rSIOutPortShape Id="cc334973-0a69-44eb-ac45-34b15498d96b" absoluteBounds="5.125, 12.25, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A1" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="3ee6124b-5a9d-46bd-8d9d-5b639eb2155b" absoluteBounds="5.125, 12.65, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A2" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="445d2a16-7556-4dd6-91b2-a87d49d20047" absoluteBounds="5.125, 13.05, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A3" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="e4bfcd6b-20e4-46bf-960d-6a1679889c4e" absoluteBounds="5.125, 13.45, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A4" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="cd23132d-30f6-4318-b477-67e46656f7de" absoluteBounds="5.125, 13.85, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A5" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+        <rSIOutPortShape Id="08feed6a-63ce-4f9a-a7e6-bb7c3990337e" absoluteBounds="5.125, 14.25, 0.40000000596046448, 0.075000002980232239" fillColor="White">
+          <rSIOutPortMoniker name="//GEARTORQUE1/A6" />
+          <relativeChildShapes />
+        </rSIOutPortShape>
+      </relativeChildShapes>
+      <nestedChildShapes>
+        <elementListCompartment Id="9a32dc39-211d-4424-9f22-2d58df504fca" absoluteBounds="3.6400000000000006, 12.51, 1.4700000000000002, 0.44169108072916663" name="RSIParameters" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </rSIElementShape>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 3.41250000149012); (12.5583333273728 : 3.41250000149012 : JumpStart); (12.2666666607062 : 3.41250000149012 : JumpEnd); (12.2249999940395 : 3.41250000149012); (12.2249999940395 : 0.787500001490116); (2.52500000596046 : 0.787500001490116)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="abdd0bd3-4335-4e64-8eff-da73d407a69c" />
+        <rSIOutPortShapeMoniker Id="9762fa44-ebfa-4ba0-aa81-f173c938ff8d" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 3.81250000149012); (12.5583333273728 : 3.81250000149012 : JumpStart); (12.2666666607062 : 3.81250000149012 : JumpEnd); (12.0999999940395 : 3.81250000149012); (12.0999999940395 : 1.18750000149012); (4.18333332737287 : 1.18750000149012 : JumpStart); (4.0166666607062 : 1.18750000149012 : JumpEnd); (2.52500000596046 : 1.18750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="b8c556e4-4c3c-4a33-a3c8-95bc1e5f145e" />
+        <rSIOutPortShapeMoniker Id="3d3be0c2-0a8a-4e7d-bb79-6158d0e0260c" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 4.21250000149012); (12.5583333273728 : 4.21250000149012 : JumpStart); (12.2666666607062 : 4.21250000149012 : JumpEnd); (11.9749999940395 : 4.21250000149012); (11.9749999940395 : 1.58750000149012); (4.18333332737287 : 1.58750000149012 : JumpStart); (3.8916666607062 : 1.58750000149012 : JumpEnd); (2.52500000596046 : 1.58750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="bd0e622b-31c6-4d18-94b5-1d7a8f16ea14" />
+        <rSIOutPortShapeMoniker Id="b2f38d8f-707b-432f-b66f-319c650b0e28" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 4.61250000149012); (12.5583333273728 : 4.61250000149012 : JumpStart); (12.3916666607062 : 4.61250000149012 : JumpEnd); (12.3499999940395 : 4.61250000149012); (12.3499999940395 : 1.98750000149012); (12.3083333273729 : 1.98750000149012 : JumpStart); (11.8916666607062 : 1.98750000149012 : JumpEnd); (4.18333332737287 : 1.98750000149012 : JumpStart); (3.7666666607062 : 1.98750000149012 : JumpEnd); (2.52500000596046 : 1.98750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="24df48ca-6754-4eaa-9173-fb0e3da1f1b8" />
+        <rSIOutPortShapeMoniker Id="28bc309e-2711-4119-8379-ee04fff33e81" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 5.01250000149012); (12.4749999940395 : 5.01250000149012); (12.4749999940395 : 2.38750000149012); (12.4333333273728 : 2.38750000149012 : JumpStart); (11.8916666607062 : 2.38750000149012 : JumpEnd); (4.18333332737287 : 2.38750000149012 : JumpStart); (3.64166666070621 : 2.38750000149012 : JumpEnd); (2.52500000596046 : 2.38750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="fef42005-42d7-4662-bdb2-663fa08df598" />
+        <rSIOutPortShapeMoniker Id="5a18c5ad-7259-413f-8fac-e11276b84a13" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 5.41250000149012); (12.3083333273729 : 5.41250000149012 : JumpStart); (12.1416666607062 : 5.41250000149012 : JumpEnd); (11.8499999940395 : 5.41250000149012); (11.8499999940395 : 2.78750000149012); (4.18333332737287 : 2.78750000149012 : JumpStart); (3.64166666070621 : 2.78750000149012 : JumpEnd); (2.52500000596046 : 2.78750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="f748cb43-ede5-402f-89c0-6d97b4b57e0b" />
+        <rSIOutPortShapeMoniker Id="89172e99-959e-4ea6-a015-6b2dd22b49c4" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 5.81250000149012); (12.4333333273729 : 5.81250000149012 : JumpStart); (12.2666666607062 : 5.81250000149012 : JumpEnd); (12.2249999940395 : 5.81250000149012); (12.2249999940395 : 4.16250000149012); (11.9333333273728 : 4.16250000149012 : JumpStart); (11.7666666607062 : 4.16250000149012 : JumpEnd); (6.77500000596046 : 4.16250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="a1b81e0b-443a-4e77-9750-32a4a6c067ad" />
+        <rSIOutPortShapeMoniker Id="5133aedb-1dd2-4933-84e4-7a66fbaf3b12" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 6.21250000149012); (12.3499999940395 : 6.21250000149012); (12.3499999940395 : 5.41250000149012); (12.3083333273729 : 5.41250000149012 : JumpStart); (12.1416666607062 : 5.41250000149012 : JumpEnd); (6.77500000596046 : 5.41250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="0ead782e-bd68-4bed-b0ae-75a8301cfcd5" />
+        <rSIOutPortShapeMoniker Id="6556575c-086e-4ed8-a060-51c439f93715" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 6.61250000149012); (12.2249999940395 : 6.61250000149012); (12.2249999940395 : 6.66250000149012); (6.77500000596046 : 6.66250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="c9b789bd-7955-459a-a0f0-48475d93d13a" />
+        <rSIOutPortShapeMoniker Id="2abde171-1c9d-483f-8953-2cd300244810" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 7.01250000149012); (12.2249999940395 : 7.01250000149012); (12.2249999940395 : 7.78750000149012); (6.77500000596046 : 7.78750000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="0ef9feb8-f66b-46dc-b393-46e402581195" />
+        <rSIOutPortShapeMoniker Id="c5441ce4-21b7-4f8b-8846-3f4a08e04fdd" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 7.41250000149012); (12.3083333273728 : 7.41250000149012 : JumpStart); (12.1416666607062 : 7.41250000149012 : JumpEnd); (11.9749999940395 : 7.41250000149012); (11.9749999940395 : 8.91250000149012); (6.77500000596046 : 8.91250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="33cadcf9-5532-4731-958e-780ee9089453" />
+        <rSIOutPortShapeMoniker Id="328d12ea-7cbd-48bb-b346-56baafb22d66" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 7.81250000149012); (12.3499999940395 : 7.81250000149012); (12.3499999940395 : 10.0375000014901); (12.3083333273728 : 10.0375000014901 : JumpStart); (12.1416666607062 : 10.0375000014901 : JumpEnd); (6.77500000596046 : 10.0375000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="a2a4a82e-48d6-476f-b378-06964d171436" />
+        <rSIOutPortShapeMoniker Id="7e68da0a-fa60-4836-a477-bcebb067f946" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 8.21250000149012); (12.2249999940395 : 8.21250000149012); (12.2249999940395 : 12.2875000014901); (5.52500000596046 : 12.2875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="408738d2-4a96-45fa-afa6-e136928c7d4a" />
+        <rSIOutPortShapeMoniker Id="cc334973-0a69-44eb-ac45-34b15498d96b" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 8.61250000149012); (12.4749999940395 : 8.61250000149012); (12.4749999940395 : 12.6875000014901); (12.3708333273728 : 12.6875000014901 : JumpStart); (12.1729166607062 : 12.6875000014901 : JumpEnd); (5.52500000596046 : 12.6875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="da0481a6-7e50-4ba1-878c-067ce2eb2b4b" />
+        <rSIOutPortShapeMoniker Id="3ee6124b-5a9d-46bd-8d9d-5b639eb2155b" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 9.01250000149012); (12.2874999940395 : 9.01250000149012); (12.2874999940395 : 13.0875000014901); (5.52500000596046 : 13.0875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="1b49e7a4-2422-4376-8fb6-f93fc1b13195" />
+        <rSIOutPortShapeMoniker Id="445d2a16-7556-4dd6-91b2-a87d49d20047" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 9.41250000149012); (12.4124999940395 : 9.41250000149012); (12.4124999940395 : 13.4875000014901); (5.52500000596046 : 13.4875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="81d2497d-8b69-4a7c-baba-ab19c995e205" />
+        <rSIOutPortShapeMoniker Id="e4bfcd6b-20e4-46bf-960d-6a1679889c4e" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 9.81250000149012); (12.5374999940395 : 9.81250000149012); (12.5374999940395 : 13.8875000014901); (5.52500000596046 : 13.8875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="a0700e34-d6ce-41b8-b310-e1d1de7db112" />
+        <rSIOutPortShapeMoniker Id="cd23132d-30f6-4318-b477-67e46656f7de" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(12.5999999940395 : 10.2125000014901); (12.4958333273728 : 10.2125000014901 : JumpStart); (12.3291666607062 : 10.2125000014901 : JumpEnd); (12.2562499940395 : 10.2125000014901); (12.2562499940395 : 14.2875000014901); (5.52500000596046 : 14.2875000014901)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="5f07944b-9ff7-4bb9-a047-b61437570aaf" />
+        <rSIOutPortShapeMoniker Id="08feed6a-63ce-4f9a-a7e6-bb7c3990337e" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 3.41250000149012); (14.9000000059605 : 3.41250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="f2b59bf1-531b-44c5-a47a-f7d194e63c71" />
+        <rSIOutPortShapeMoniker Id="de403588-cb6b-4632-8374-a31518ccccbd" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 3.81250000149012); (14.9000000059605 : 3.81250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="a1b92ae8-ac01-43de-8aa1-2723ebe1201d" />
+        <rSIOutPortShapeMoniker Id="3efc067d-808d-4af0-9d26-db0bdd796200" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 4.21250000149012); (14.9000000059605 : 4.21250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="70df0e57-d834-429c-b2b8-3d07c0daf2aa" />
+        <rSIOutPortShapeMoniker Id="4e25c1ff-acf7-44fb-8f03-414b64ad9218" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 4.61250000149012); (14.9000000059605 : 4.61250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="c587778f-7d8f-4e18-91bc-66cdaa987bba" />
+        <rSIOutPortShapeMoniker Id="4477ff66-a90f-4577-b0c8-2f6c2ff082c1" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 5.01250000149012); (14.9000000059605 : 5.01250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="2c8328be-e3db-4d34-9730-f95c190abb01" />
+        <rSIOutPortShapeMoniker Id="c0662312-6615-4fba-80e8-959cadf3ba0f" />
+      </nodes>
+    </rSISignalConnector>
+    <rSISignalConnector edgePoints="[(18.5999999940395 : 5.41250000149012); (14.9000000059605 : 5.41250000149012)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e3f2b7da-330d-4daf-bd29-4d4ed734c0af">
+      <nodes>
+        <rSIInPortShapeMoniker Id="1832fdf8-b656-490b-b82d-986bee4e2860" />
+        <rSIOutPortShapeMoniker Id="05025b87-624a-49fd-89fd-00e7a57f8539" />
+      </nodes>
+    </rSISignalConnector>
+  </nestedChildShapes>
+</rSIObjectDiagram>

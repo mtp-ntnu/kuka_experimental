@@ -137,17 +137,9 @@ bool KukaHardwareInterface::write(const ros::Time time, const ros::Duration peri
 
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
-    joint_velocity_command_[i] = RAD2DEG * joint_velocity_command_[i];
-    // joint_velocity_command_[i] = 0.0;
+    joint_position_command_[i] = RAD2DEG * joint_velocity_command_[i] * period.toSec();
   }
-  out_buffer_ = RSICommand(joint_velocity_command_, ipoc_).xml_doc;
-  ROS_INFO_STREAM(out_buffer_);
-
-  // for (std::size_t i = 0; i < n_dof_; ++i)
-  // {
-  //   joint_velocity_command_[i] = 0.0;
-  // }
-  // out_buffer_ = RSICommand(joint_velocity_command_, ipoc_).xml_doc;
+  out_buffer_ = RSICommand(joint_position_command_, ipoc_).xml_doc;
 
   server_->send(out_buffer_);
 
