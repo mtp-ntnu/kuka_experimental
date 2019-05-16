@@ -154,7 +154,6 @@ void KukaHardwareInterface::start()
   ROS_INFO_STREAM_NAMED("kuka_hardware_interface", "Waiting for robot!");
 
   int bytes = server_->recv(in_buffer_);
-  ROS_INFO_STREAM(in_buffer_);
 
   // Drop empty <rob> frame with RSI <= 2.3
   if (bytes < 100)
