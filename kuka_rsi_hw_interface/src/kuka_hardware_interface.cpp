@@ -121,6 +121,8 @@ bool KukaHardwareInterface::read(const ros::Time time, const ros::Duration perio
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
     joint_position_[i] = DEG2RAD * rsi_state_.position[i];
+    joint_velocity_[i] = DEG2RAD * rsi_state_.velocity[i];
+    joint_effort_[i] = DEG2RAD * rsi_state_.effort[i];
   }
   ipoc_ = rsi_state_.ipoc;
 
@@ -135,12 +137,18 @@ bool KukaHardwareInterface::write(const ros::Time time, const ros::Duration peri
 
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
-    rsi_joint_position_corrections_[i] =
-        (RAD2DEG * (joint_position_[i] + joint_velocity_command_[i] * period.toSec())) -
-        rsi_initial_joint_positions_[i];
+    joint_velocity_command_[i] = RAD2DEG * joint_velocity_command_[i];
+    // joint_velocity_command_[i] = 0.0;
   }
+  out_buffer_ = RSICommand(joint_velocity_command_, ipoc_).xml_doc;
+  ROS_INFO_STREAM(out_buffer_);
 
-  out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;
+  // for (std::size_t i = 0; i < n_dof_; ++i)
+  // {
+  //   joint_velocity_command_[i] = 0.0;
+  // }
+  // out_buffer_ = RSICommand(joint_velocity_command_, ipoc_).xml_doc;
+
   server_->send(out_buffer_);
 
   return true;
@@ -154,6 +162,7 @@ void KukaHardwareInterface::start()
   ROS_INFO_STREAM_NAMED("kuka_hardware_interface", "Waiting for robot!");
 
   int bytes = server_->recv(in_buffer_);
+  ROS_INFO_STREAM(in_buffer_);
 
   // Drop empty <rob> frame with RSI <= 2.3
   if (bytes < 100)
@@ -165,11 +174,11 @@ void KukaHardwareInterface::start()
   for (std::size_t i = 0; i < n_dof_; ++i)
   {
     joint_position_[i] = DEG2RAD * rsi_state_.position[i];
-    joint_position_command_[i] = joint_position_[i];
-    rsi_initial_joint_positions_[i] = rsi_state_.initial_position[i];
+    joint_velocity_[i] = DEG2RAD * rsi_state_.velocity[i];
+    joint_effort_[i] = DEG2RAD * rsi_state_.effort[i];
   }
   ipoc_ = rsi_state_.ipoc;
-  out_buffer_ = RSICommand(rsi_joint_position_corrections_, ipoc_).xml_doc;
+  out_buffer_ = RSICommand(joint_velocity_command_, ipoc_).xml_doc;
   server_->send(out_buffer_);
   // Set receive timeout to 1 second
   server_->set_timeout(1000);

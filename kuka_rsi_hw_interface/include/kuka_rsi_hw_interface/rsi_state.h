@@ -52,11 +52,9 @@ private:
 public:
   RSIState()
     : position(6, 0.0)
-    , initial_position(6, 0.0)
-    , cart_position(6, 0.0)
-    , initial_cart_position(6, 0.0)
     , velocity(6, 0.0)
     , effort(6, 0.0)
+    , ipoc(0)
   {
     xml_doc_.resize(1024);
   }
@@ -64,28 +62,20 @@ public:
   RSIState(std::string xml_doc);
   // AIPOS
   std::vector<double> position;
-  // ASPos
-  std::vector<double> initial_position;
-  // RIst
-  std::vector<double> cart_position;
-  // RSol
-  std::vector<double> initial_cart_position;
-  // IPOC
-  unsigned long long ipoc;
   // Vel
   std::vector<double> velocity;
   // Eff
   std::vector<double> effort;
+  // IPOC
+  unsigned long long ipoc;
 };
 
 RSIState::RSIState(std::string xml_doc)
   : xml_doc_(xml_doc)
   , position(6, 0.0)
-  , initial_position(6, 0.0)
-  , cart_position(6, 0.0)
-  , initial_cart_position(6, 0.0)
   , velocity(6, 0.0)
   , effort(6, 0.0)
+  , ipoc(0)
 {
   // Parse message from robot
   TiXmlDocument bufferdoc;
@@ -101,45 +91,21 @@ RSIState::RSIState(std::string xml_doc)
   position_element->Attribute("A5", &position[4]);
   position_element->Attribute("A6", &position[5]);
   // Extract velocities computed on the robot side
-  TiXmlElement* AIPos_el = rob->FirstChildElement("Vel");
-  AIPos_el->Attribute("A1", &velocity[0]);
-  AIPos_el->Attribute("A2", &velocity[1]);
-  AIPos_el->Attribute("A3", &velocity[2]);
-  AIPos_el->Attribute("A4", &velocity[3]);
-  AIPos_el->Attribute("A5", &velocity[4]);
-  AIPos_el->Attribute("A6", &velocity[5]);
+  TiXmlElement* velocity_element = rob->FirstChildElement("Vel");
+  velocity_element->Attribute("A1", &velocity[0]);
+  velocity_element->Attribute("A2", &velocity[1]);
+  velocity_element->Attribute("A3", &velocity[2]);
+  velocity_element->Attribute("A4", &velocity[3]);
+  velocity_element->Attribute("A5", &velocity[4]);
+  velocity_element->Attribute("A6", &velocity[5]);
   // Extract gear torque (effort)
-  TiXmlElement* Eff_el = rob->FirstChildElement("Eff");
-  AIPos_el->Attribute("A1", &effort[0]);
-  AIPos_el->Attribute("A2", &effort[1]);
-  AIPos_el->Attribute("A3", &effort[2]);
-  AIPos_el->Attribute("A4", &effort[3]);
-  AIPos_el->Attribute("A5", &effort[4]);
-  AIPos_el->Attribute("A6", &effort[5]);
-  // Extract axis specific setpoint position
-  TiXmlElement* ASPos_el = rob->FirstChildElement("ASPos");
-  ASPos_el->Attribute("A1", &initial_position[0]);
-  ASPos_el->Attribute("A2", &initial_position[1]);
-  ASPos_el->Attribute("A3", &initial_position[2]);
-  ASPos_el->Attribute("A4", &initial_position[3]);
-  ASPos_el->Attribute("A5", &initial_position[4]);
-  ASPos_el->Attribute("A6", &initial_position[5]);
-  // Extract cartesian actual position
-  TiXmlElement* RIst_el = rob->FirstChildElement("RIst");
-  RIst_el->Attribute("X", &cart_position[0]);
-  RIst_el->Attribute("Y", &cart_position[1]);
-  RIst_el->Attribute("Z", &cart_position[2]);
-  RIst_el->Attribute("A", &cart_position[3]);
-  RIst_el->Attribute("B", &cart_position[4]);
-  RIst_el->Attribute("C", &cart_position[5]);
-  // Extract cartesian actual position
-  TiXmlElement* RSol_el = rob->FirstChildElement("RSol");
-  RSol_el->Attribute("X", &initial_cart_position[0]);
-  RSol_el->Attribute("Y", &initial_cart_position[1]);
-  RSol_el->Attribute("Z", &initial_cart_position[2]);
-  RSol_el->Attribute("A", &initial_cart_position[3]);
-  RSol_el->Attribute("B", &initial_cart_position[4]);
-  RSol_el->Attribute("C", &initial_cart_position[5]);
+  TiXmlElement* effort_element = rob->FirstChildElement("Eff");
+  effort_element->Attribute("A1", &effort[0]);
+  effort_element->Attribute("A2", &effort[1]);
+  effort_element->Attribute("A3", &effort[2]);
+  effort_element->Attribute("A4", &effort[3]);
+  effort_element->Attribute("A5", &effort[4]);
+  effort_element->Attribute("A6", &effort[5]);
   // Get the IPOC timestamp
   TiXmlElement* ipoc_el = rob->FirstChildElement("IPOC");
   ipoc = std::stoull(ipoc_el->FirstChild()->Value());
