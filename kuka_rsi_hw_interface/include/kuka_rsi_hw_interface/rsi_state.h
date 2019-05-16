@@ -34,7 +34,7 @@
 
 /*
  * Author: Lars Tingelstad <lars.tingelstad@ntnu.no>
-*/
+ */
 
 #ifndef KUKA_RSI_HW_INTERFACE_RSI_STATE_
 #define KUKA_RSI_HW_INTERFACE_RSI_STATE_
@@ -44,21 +44,19 @@
 
 namespace kuka_rsi_hw_interface
 {
-
 class RSIState
 {
-
 private:
   std::string xml_doc_;
 
 public:
-  RSIState() :
-    position(6, 0.0),
-    initial_position(6, 0.0),
-    cart_position(6, 0.0),
-    initial_cart_position(6, 0.0),
-    velocity(6, 0.0),
-    effort(6, 0.0)
+  RSIState()
+    : position(6, 0.0)
+    , initial_position(6, 0.0)
+    , cart_position(6, 0.0)
+    , initial_cart_position(6, 0.0)
+    , velocity(6, 0.0)
+    , effort(6, 0.0)
   {
     xml_doc_.resize(1024);
   }
@@ -76,19 +74,18 @@ public:
   unsigned long long ipoc;
   // Vel
   std::vector<double> velocity;
-  // Eff 
+  // Eff
   std::vector<double> effort;
-
 };
 
-RSIState::RSIState(std::string xml_doc) :
-  xml_doc_(xml_doc),
-  position(6, 0.0),
-  initial_position(6, 0.0),
-  cart_position(6, 0.0),
-  initial_cart_position(6, 0.0),
-  velocity(6, 0.0),
-  effort(6, 0.0)
+RSIState::RSIState(std::string xml_doc)
+  : xml_doc_(xml_doc)
+  , position(6, 0.0)
+  , initial_position(6, 0.0)
+  , cart_position(6, 0.0)
+  , initial_cart_position(6, 0.0)
+  , velocity(6, 0.0)
+  , effort(6, 0.0)
 {
   // Parse message from robot
   TiXmlDocument bufferdoc;
@@ -96,15 +93,15 @@ RSIState::RSIState(std::string xml_doc) :
   // Get the Rob node:
   TiXmlElement* rob = bufferdoc.FirstChildElement("Rob");
   // Extract axis specific actual position
-  TiXmlElement* AIPos_el = rob->FirstChildElement("AIPos");
-  AIPos_el->Attribute("A1", &position[0]);
-  AIPos_el->Attribute("A2", &position[1]);
-  AIPos_el->Attribute("A3", &position[2]);
-  AIPos_el->Attribute("A4", &position[3]);
-  AIPos_el->Attribute("A5", &position[4]);
-  AIPos_el->Attribute("A6", &position[5]);
+  TiXmlElement* position_element = rob->FirstChildElement("Pos");
+  position_element->Attribute("A1", &position[0]);
+  position_element->Attribute("A2", &position[1]);
+  position_element->Attribute("A3", &position[2]);
+  position_element->Attribute("A4", &position[3]);
+  position_element->Attribute("A5", &position[4]);
+  position_element->Attribute("A6", &position[5]);
   // Extract velocities computed on the robot side
-  TiXmlElement* Vel_el = rob->FirstChildElement("Vel");
+  TiXmlElement* AIPos_el = rob->FirstChildElement("Vel");
   AIPos_el->Attribute("A1", &velocity[0]);
   AIPos_el->Attribute("A2", &velocity[1]);
   AIPos_el->Attribute("A3", &velocity[2]);
@@ -148,6 +145,6 @@ RSIState::RSIState(std::string xml_doc) :
   ipoc = std::stoull(ipoc_el->FirstChild()->Value());
 }
 
-} // namespace kuka_rsi_hw_interface
+}  // namespace kuka_rsi_hw_interface
 
 #endif

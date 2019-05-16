@@ -44,12 +44,11 @@
 
 namespace kuka_rsi_hw_interface
 {
-
 class RSICommand
 {
 public:
   RSICommand();
-  RSICommand(std::vector<double> position_corrections, unsigned long long ipoc);
+  RSICommand(std::vector<double> velocity, unsigned long long ipoc);
   std::string xml_doc;
 };
 
@@ -58,19 +57,19 @@ RSICommand::RSICommand()
   // Intentionally empty
 }
 
-RSICommand::RSICommand(std::vector<double> joint_position_correction, unsigned long long ipoc)
+RSICommand::RSICommand(std::vector<double> velocity, unsigned long long ipoc)
 {
   TiXmlDocument doc;
   TiXmlElement* root = new TiXmlElement("Sen");
   root->SetAttribute("Type", "ImFree");
-  TiXmlElement* el = new TiXmlElement("AK");
+  TiXmlElement* el = new TiXmlElement("VelCmd");
   // Add string attribute
-  el->SetAttribute("A1", std::to_string(joint_position_correction[0]));
-  el->SetAttribute("A2", std::to_string(joint_position_correction[1]));
-  el->SetAttribute("A3", std::to_string(joint_position_correction[2]));
-  el->SetAttribute("A4", std::to_string(joint_position_correction[3]));
-  el->SetAttribute("A5", std::to_string(joint_position_correction[4]));
-  el->SetAttribute("A6", std::to_string(joint_position_correction[5]));
+  el->SetAttribute("A1", std::to_string(velocity[0]));
+  el->SetAttribute("A2", std::to_string(velocity[1]));
+  el->SetAttribute("A3", std::to_string(velocity[2]));
+  el->SetAttribute("A4", std::to_string(velocity[3]));
+  el->SetAttribute("A5", std::to_string(velocity[4]));
+  el->SetAttribute("A6", std::to_string(velocity[5]));
 
   root->LinkEndChild(el);
   el = new TiXmlElement("IPOC");
@@ -84,6 +83,6 @@ RSICommand::RSICommand(std::vector<double> joint_position_correction, unsigned l
   xml_doc = printer.Str();
 }
 
-} // namespace kuka_rsi_hw_interface
+}  // namespace kuka_rsi_hw_interface
 
 #endif
